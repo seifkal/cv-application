@@ -1,6 +1,11 @@
 .form-container{
     width: 596px;
-    height: 1123px;
+    height: 1123px; 
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+}       
+h1{
+    border-bottom: 3px solid black;
 }

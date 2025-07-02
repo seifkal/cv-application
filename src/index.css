@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   background-color: #FAF9F6;
-
+  color: black;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -60,7 +60,7 @@ button:focus-visible {
 #root {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 5rem;
   justify-content: center;
   align-items: flex-start;
 }

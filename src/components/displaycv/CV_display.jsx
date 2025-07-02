@@ -6,8 +6,10 @@ function CV_display({personalInfo,educationInfo,experienceInfo}) {
     return (
         <div className="cv-container">
             <Personal personalInfo = {personalInfo} />
-            <Education info = {educationInfo}></Education>
-            <Experience info={experienceInfo}></Experience>
+            <div className="qualifications-container">
+                 <Education info = {educationInfo}></Education>
+                <Experience info={experienceInfo}></Experience>
+            </div>
         </div>
 
     )

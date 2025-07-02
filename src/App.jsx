@@ -15,7 +15,7 @@ function App() {
       field: "Bachelors in Computer engineering",
       from: "09/2021",
       until: "present",
-      place: "Amman, JO",
+      address: "Amman, JO",
     },
   ])
   const [experienceInfo, setExperienceInfo] = useState([
@@ -24,20 +24,21 @@ function App() {
       field: "DevOps Traineeship",
       from: "02/2025",
       until: "04/2025",
-      place: "Amman,JO",
+      address: "Amman, JO",
     },
     {
       title: "Placeholder Inc.",
       field: "Software engineer",
       from: "09/2025",
-      until: "present"
+      until: "present",
+      address: "Amman, JO"
     }
   ])
 
 
   return(
     <>
-      <Form></Form>
+      <Form personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} educationInfo={educationInfo} setEducationInfo={setEducationInfo} experienceInfo={experienceInfo} setExperienceInfo={setExperienceInfo}></Form>
       <CV_display personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}></CV_display>
     </>
   )

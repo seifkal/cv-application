@@ -1,0 +1,8 @@
+.personal-title{
+    border-bottom: 3px solid black;
+    display: flex;
+}
+.personal-form{
+    display: flex;
+    flex-direction: column;
+}
