@@ -1,3 +1,23 @@
 .entryData{
     color: black;
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+}
+.entry-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 2rem;
+}
+.title{
+    font-weight: bold;
+}
+.meta{
+    word-break: break-word;
+    white-space: normal;
+    width: 17ch;
+    min-width: 17ch;
+    max-width: 17ch;
 }

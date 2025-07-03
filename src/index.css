@@ -28,8 +28,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;  
-  
-  padding: 18px;
 }
 
 
@@ -60,7 +58,6 @@ button:focus-visible {
 #root {
   display: flex;
   flex-direction: row;
-  gap: 5rem;
   justify-content: center;
   align-items: flex-start;
 }
@@ -76,4 +73,18 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+body,html{
+  overflow-x: hidden;
+}
+input{
+  font-size: 14px;
+  color: black;
+  background-color: #deeaee;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+}
+h1,h2,h3{
+  font-weight: 400;
 }

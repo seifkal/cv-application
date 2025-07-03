@@ -1,12 +1,13 @@
 import CV_display from "./components/displaycv/CV_display";
 import Form from "./components/form/form";
 import { useState } from "react";
+import "./App.css"
 function App() {
   const [personalInfo ,setPersonalInfo] = useState({
     name: "Seif Kal",
     email: "S.Kal@gju.edu.jo",
     phone: "+962 1234 5678 9012",
-    address: "Amman, JO",
+    address: "Amman,JO",
   });
 
   const [educationInfo, setEducationInfo] = useState([
@@ -38,8 +39,14 @@ function App() {
 
   return(
     <>
-      <Form personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} educationInfo={educationInfo} setEducationInfo={setEducationInfo} experienceInfo={experienceInfo} setExperienceInfo={setExperienceInfo}></Form>
-      <CV_display personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}></CV_display>
+      <div className="container">
+        <div className="formm-container">
+          <Form personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} educationInfo={educationInfo} setEducationInfo={setEducationInfo} experienceInfo={experienceInfo} setExperienceInfo={setExperienceInfo}></Form>
+        </div>
+        <div className="CVdisplay-container">
+          <CV_display personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}></CV_display>  
+        </div>
+      </div>
     </>
   )
 }

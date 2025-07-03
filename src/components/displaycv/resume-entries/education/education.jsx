@@ -3,7 +3,7 @@ import "./education.css"
 function Education( { info } ){
     return (
         <>
-            <h1 className="section-title">Education</h1>
+            <h3 className="section-title">Education</h3>
             <div className="education-container"></div>
             {info.map((entry) => (
                 <ResumeEntry info={entry}></ResumeEntry>

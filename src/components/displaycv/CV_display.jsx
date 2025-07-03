@@ -1,4 +1,4 @@
-import "../../styles/CV_display.css"
+import "./CV_display.css"
 import Personal from "./personal/personal";
 import Education from "./resume-entries/education/education";
 import Experience from "./resume-entries/experience/experience";

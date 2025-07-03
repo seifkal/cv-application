@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.formm-container {
+  width: 500px; /* Fixed width on the left */
+  background-color: #f0f0f0;
+}
+
+.CVdisplay-container {
+  flex-grow: 1;              /* Take remaining space */
+  display: flex;
+  justify-content: center;   /* Center content horizontally */
+  align-items: flex-start;   /* Align content to top */
+  box-sizing: border-box;
+  padding: 1rem;
+}

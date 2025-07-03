@@ -11,7 +11,7 @@ function Personalform({ personalInfo, setpersonalInfo }) {
 
   return (
     <div className="personalform-container">
-      <h1 className="personal-title">Personal Information</h1>
+      <h2 className="form-title">Personal Information</h2>
       <form className="personal-form">
         <label htmlFor="name">Full Name:</label>
         <input
