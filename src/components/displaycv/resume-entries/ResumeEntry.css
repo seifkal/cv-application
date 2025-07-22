@@ -18,6 +18,16 @@
     word-break: break-word;
     white-space: normal;
     width: 17ch;
-    min-width: 17ch;
-    max-width: 17ch;
+    min-width: 0;
+    max-width: 100%;
+}
+@media (max-width: 600px) {
+  .entry-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .meta {
+    width: 100%;
+    max-width: 100%;
+  }
 }

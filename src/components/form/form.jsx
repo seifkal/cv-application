@@ -2,40 +2,15 @@ import "./form.css"
 import Personalform from "./personal-form/personal-form";
 import QualificationForm from "./qualification-form/qualification-form";
 import { useState } from "react";
-
-function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, experienceInfo, setExperienceInfo }) {
+function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, experienceInfo, setExperienceInfo}) {
     const [pendingEducation, setPendingEducation] = useState(null);
     const [pendingExperience, setPendingExperience] = useState(null);
-
-    // --- Handler functions for Education ---
-    const handleSaveEducation = () => {
-        setEducationInfo(prev => [...prev, pendingEducation]);
-        setPendingEducation(null);
-    };
-    const handleCancelEducation = () => {
-        setPendingEducation(null);
-    };
-    const handleDeleteEducation = idx => {
-        setEducationInfo(prev => prev.filter((_, i) => i !== idx));
-    };
-
-    // --- Handler functions for Experience ---
-    const handleSaveExperience = () => {
-        setExperienceInfo(prev => [...prev, pendingExperience]);
-        setPendingExperience(null);
-    };
-    const handleCancelExperience = () => {
-        setPendingExperience(null);
-    };
-    const handleDeleteExperience = idx => {
-        setExperienceInfo(prev => prev.filter((_, i) => i !== idx));
-    };
-
     return (
         <div className="form-container">
             <Personalform personalInfo={personalInfo} setpersonalInfo={setPersonalInfo} />
             <div className="educationForm-container">
                 <h2 className="form-title">Education Background</h2>
+
                 {/* Render a Qualification form for each EducationInfo object */}
                 {educationInfo.map((entry, idx) => (
                   <QualificationForm
@@ -50,9 +25,10 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                     length={educationInfo.length}
                     index={idx}
                     isPending={false}
-                    onDelete={() => handleDeleteEducation(idx)}
+                    onDelete={() => setEducationInfo(prev => prev.filter((_, i) => i !== idx))}
                   />
                 ))}
+
                 {/* Render pending education form if present */}
                 {pendingEducation && (
                   <QualificationForm
@@ -62,10 +38,14 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                     length={educationInfo.length + 1}
                     index={educationInfo.length}
                     isPending={true}
-                    onSave={handleSaveEducation}
-                    onCancel={handleCancelEducation}
+                    onSave={() => {
+                      setEducationInfo(prev => [...prev, pendingEducation]);
+                      setPendingEducation(null);
+                    }}
+                    onCancel={() => setPendingEducation(null)}
                   />
                 )}
+
                 {/* button to add more educationinfo */}
                 {!pendingEducation && (
                   <button
@@ -76,7 +56,9 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                     Add Education
                   </button>
                 )}
+
                 <h2 className="form-title">Work Experience</h2>
+
                 {/* Render a Qualification form for each experienceInfo object */}
                 {experienceInfo.map((entry, idx) => (
                   <QualificationForm
@@ -91,9 +73,10 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                     length={experienceInfo.length}
                     index={idx}
                     isPending={false}
-                    onDelete={() => handleDeleteExperience(idx)}
+                    onDelete={() => setExperienceInfo(prev => prev.filter((_, i) => i !== idx))}
                   />
                 ))}
+
                 {/* Render pending experience form if present */}
                 {pendingExperience && (
                   <QualificationForm
@@ -103,10 +86,14 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                     length={experienceInfo.length + 1}
                     index={experienceInfo.length}
                     isPending={true}
-                    onSave={handleSaveExperience}
-                    onCancel={handleCancelExperience}
+                    onSave={() => {
+                      setExperienceInfo(prev => [...prev, pendingExperience]);
+                      setPendingExperience(null);
+                    }}
+                    onCancel={() => setPendingExperience(null)}
                   />
                 )}
+
                 {/* button to add more experience info */}
                 {!pendingExperience && (
                   <button
@@ -119,6 +106,6 @@ function Form({ personalInfo, setPersonalInfo, educationInfo, setEducationInfo, 
                 )}
             </div>
         </div>
-    );
+    )
 }
 export default Form;

@@ -17,3 +17,22 @@
   box-sizing: border-box;
   padding: 1rem;
 }
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .formm-container {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .CVdisplay-container {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    padding: 0.5rem;
+  }
+}

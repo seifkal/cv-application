@@ -1,14 +1,27 @@
 .cv-container{
-    width: 600px;
-    height: 100vh;
-    background-color: whit e;
-
+    width: 100%;
+    max-width: 600px;
+    min-width: 0;
+    height: auto;
+    min-height: 100vh;
+    background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 .qualifications-container{
     padding: 24px;
+}
+@media (max-width: 900px) {
+  .cv-container {
+    max-width: 100vw;
+    min-width: 0;
+    box-shadow: none;
+    padding: 0.5rem;
+  }
+  .qualifications-container {
+    padding: 8px;
+  }
 }
 
